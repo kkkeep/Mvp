@@ -1,0 +1,45 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.m.k.mvp" >
+
+
+
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:usesCleartextTraffic="true"
+        >
+
+
+        <provider
+
+            android:authorities="${applicationId}.userhead.HeadProvider"
+            android:name="com.m.k.mvp.provider.MkPhotoFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            >
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/mvp_provider_files"/>
+
+        </provider>
+
+        <provider
+            android:authorities="${applicationId}.apk.InstallProvider"
+            android:name="com.m.k.mvp.provider.MkApkInstallProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            >
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/mvp_provider_files"/>
+
+        </provider>
+
+        <receiver android:name="com.m.k.mvp.load.MkApkLoadManager$ApkInstallReceiver" >
+
+            <intent-filter >
+               <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/> <!-- 不需要加 data-->
+            </intent-filter>
+
+        </receiver>
+
+        <service android:name="com.m.k.mvp.load.ApkLoadService" />
+    </application>
+</manifest>

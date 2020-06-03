@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="MkMarqueeView">
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="speed" format="integer" />
+        <attr name="spacing" format="dimension" />
+    </declare-styleable>
+    
+    <declare-styleable name="MkBottomTabLayout" >
+        <attr name="dividingLine" format="boolean"/><!--是否显示分割线-->
+
+        <attr name="dividingLineColor" format="color|reference"/> <!--分割线颜色-->
+        <!--分为两种情况：第一种 所有tab 的高度一致的情况,这个值表示 距离 任何一个tab 的 距离，默认值 tabMarginTop-->
+        <!--分为两种情况：第二种 中间tab 高度大于左右两边的高度 ,这个值表示 距离除中间以外的其他 tab 的 距离，默认值 tabMarginTop-->
+        <attr name="dividingLineMarginToTap" format="dimension|reference"/>
+        <!--制定分割线的margin 相对于哪一个 tab,不指定的情况下相对于高度最小的tab，下标从 0 开始-->
+        <attr name="dividingLineMarginToTapIndex" format="integer"/>
+
+        <attr name="dividingLineHeight" format="dimension|reference"/><!--分割线的高度-->
+        <attr name="layoutBackground" format="color|reference"/> <!--背景,可以是颜色，也可以是 图片-->
+        <attr name="fistTabMarginLeft" format="dimension|reference"/> <!--左边边距  默认为24dp -->
+        <attr name="lastTabMarginRight" format="dimension|reference"/><!--右边边距  默认为24dp -->
+        <attr name="tabMarginTop" format="dimension|reference"/><!--上边边距， 默认为8dp 如果有分割线的话，就是距离分割线的边距-->
+        <attr name="tabMarginBottom" format="dimension|reference"/><!--底部边距,  默认为8dp -->
+
+
+
+    </declare-styleable>
+</resources>
